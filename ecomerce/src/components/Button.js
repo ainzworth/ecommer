@@ -1,3 +1,4 @@
+import { hover } from "@testing-library/user-event/dist/hover";
 import React from "react";
 
 export const Button =({content,bgColor,fontSize,width})=>{
@@ -16,7 +17,7 @@ export const Button =({content,bgColor,fontSize,width})=>{
         borderRadius: "15px",
         fontSize:  fontSize ||"20px",
         border: "none",
-        boxSizing:'border-box' 
+        boxSizing:'border-box' ,
     }
 }
 

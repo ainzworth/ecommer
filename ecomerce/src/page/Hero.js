@@ -22,9 +22,9 @@ export const Hero = () => {
                         </div>
                     </Link>
                 </div>
-            <Section></Section>
-            <Section des="Các khóa học cho thiết kế 3D" butDes="Khám phá" bgColor="#007E25"></Section>
-            <Section des="Cần họa sĩ cho dự án của bạn" butDes="Tuyển dụng" bgColor="#00B735"></Section>
+            <Section link="/shop"></Section>
+            <Section link="/content"des="Các khóa học cho thiết kế 3D" butDes="Khám phá" bgColor="#007E25"></Section>
+            <Section link="/content" des="Cần họa sĩ cho dự án của bạn" butDes="Tuyển dụng" bgColor="#00B735"></Section>
             <Footer></Footer>
         </div>
         

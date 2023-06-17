@@ -6,13 +6,15 @@
     display: flex;
     flex-direction: row;
     gap: 80px;
+    box-sizing: border-box;
     
 }
 .container_detail > .left{
     width: 600px;
     height: 600px;
     border: black solid;
-
+    object-fit: scale-down;
+    padding: 0px 50px;
 }
 .container_detail>.right{
     padding: 40px 0px;

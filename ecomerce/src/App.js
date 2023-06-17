@@ -9,6 +9,7 @@ import { ItemDetail } from './page/ItemDetail';
 import { Shop } from './page/Shop';
 import {CategoryContainer} from './page/CategoryContainer';
 import { Hero } from './page/Hero';
+import { Content } from './page/Content';
 import { Footer } from './page/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -34,6 +35,8 @@ function App() {
               <Route path='/itemDetail/:id' element={<ItemDetail/>}></Route>
               <Route path='/payment' element={<Payment/>}></Route>
               <Route path='/payment/:id' element={<Payment/>}></Route>
+              <Route path='/content' element={<Content/>}></Route>
+              <Route path='/content/thankyou' element={<Content display="Thank you for buying at our shop"/>}></Route>
           </Routes>
         </Router>
     </div>

@@ -35,6 +35,7 @@ const Container = styled.div`
   justify-content: center;
   background-color: #f5fbfd;
   position: relative;
+
   &:hover ${Info}{
     opacity: 1;
   }
@@ -50,7 +51,10 @@ const Circle = styled.div`
 
 const Image = styled.img`
   height: 75%;
+    width: 100%;
+
   z-index: 2;
+  object-fit: contain;
 `;
 
 const Icon = styled.div`
