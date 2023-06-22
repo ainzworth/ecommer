@@ -34,10 +34,10 @@ const Text = styled.div`
 export const Content = ({display}) =>{
     return(
         <Container>
-                <Text>{display || "We Have not implemented this feature"}</Text>
+                <Text>{display || "Tính năng này sẽ được cập nhật sau"}</Text>
                 <Wrapper>
                     <Link to={`/`}>
-                        <Button content="Return to Home page" bgColor="#CC2F19" width="400px">
+                        <Button content="Quay về trang chủ" bgColor="#CC2F19" width="400px">
                         </Button>
                     </Link>
                 </Wrapper>

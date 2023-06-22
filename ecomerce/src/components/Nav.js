@@ -10,8 +10,7 @@ export const Nav = () => {
   
     return(
         <nav className="navbar">
-                {/* <img src="" alt="logo"/> */}
-                 <div className="logo"></div>
+                <img className="logo" src={require("../logo/logo.png")} alt="logo"/>
                 <div className="nav_options">
                     <div className="dropdown">
                         Mua ban

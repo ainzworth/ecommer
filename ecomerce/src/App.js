@@ -36,7 +36,7 @@ function App() {
               <Route path='/payment' element={<Payment/>}></Route>
               <Route path='/payment/:id' element={<Payment/>}></Route>
               <Route path='/content' element={<Content/>}></Route>
-              <Route path='/content/thankyou' element={<Content display="Thank you for buying at our shop"/>}></Route>
+              <Route path='/content/thankyou' element={<Content display="Cảm ơn quý khách đã sử dụng dịch vụ của chúng tôi"/>}></Route>
           </Routes>
         </Router>
     </div>

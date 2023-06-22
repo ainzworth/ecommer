@@ -19,7 +19,7 @@ const Login =()=>{
                     <input type="password" name="password" placeholder='mật khẩu'/>
                     <a>Quen mat khau</a>
                 </div>
-               <Link to="/hero">                <input style={{cursor:'pointer'}} type="submit" value="Đăng nhập" />
+               <Link to="/">                <input style={{cursor:'pointer'}} type="submit" value="Đăng nhập" />
 </Link>
 
                 <div className='login_bottom'>
