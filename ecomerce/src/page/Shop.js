@@ -27,7 +27,7 @@ export const Shop = () => {
     return (
         <div>
                 <Nav></Nav>
-                <CategoryContainer></CategoryContainer>
+            
             <div className="shop">
                     {products.map((item) => (
                     <Item item={item} key={item.id} />

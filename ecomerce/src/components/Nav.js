@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 export const Nav = () => {
     
-    const quantity = useSelector(state=>state.cart.quantity)
+    // const quantity = useSelector(state=>state.cart.quantity)
   
     return(
         <nav className="navbar">
@@ -26,7 +26,7 @@ export const Nav = () => {
                 <Link to="/login">
                     <input style={{cursor:'pointer'}} type="submit" value="Đăng nhập/Đăng ký" className="navbar_button"></input>
                 </Link>
-                <div>Item in cart: {quantity}</div>
+                {/* <div>Item in cart: {quantity}</div> */}
         </nav>
     )
 }

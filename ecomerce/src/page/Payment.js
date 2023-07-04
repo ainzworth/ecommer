@@ -45,7 +45,7 @@ export const Payment = () => {
                     <hr></hr>
                     {/* <div className="total">{item.price}$</div> */}
                     <Link to="/content/thankyou">
-                        <Button bgColor="#CC2F19" content="PAY NOW" width="335px"></Button>
+                        <Button bgColor="#CC2F19" content="Thanh Toán" width="335px"></Button>
                     </Link>
                 </div>
             </div>
