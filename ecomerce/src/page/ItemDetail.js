@@ -72,7 +72,7 @@ export const ItemDetail = () => {
                 <div className="bottom">
                     <div className="bottom_price">
                         <div className="review">Dánh giá sản phẩm</div>
-                        <div className="price">$ {item.price}</div>
+                        <div className="price">{item.price} VND</div>
                              <AmountContainer>
                                 <Remove onClick={() => handleQuantity("dec")} />
                                 <Amount>{quantity}</Amount>

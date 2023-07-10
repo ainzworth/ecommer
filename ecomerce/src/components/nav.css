@@ -21,6 +21,12 @@ nav>.nav_options{
 }
 nav>.nav_options>.dropdown{
     color: #FFFFFF;
+    background: none;
+    background-color: none;
+    pointer-events: none;
+        cursor: default;
+        text-decoration: none;
+        color: black;
 }
 nav>.search_field{
     width: 400px;
@@ -35,4 +41,8 @@ nav>.search_field{
     border-radius: 6px;
     background-color: #CC2F19;
     border: none;
+}
+a:visited {
+    color: white;
+    font-style: none;
 }

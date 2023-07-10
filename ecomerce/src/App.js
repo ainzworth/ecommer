@@ -15,13 +15,14 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import { BrowserRouter as Router, Routes, Route, Navigate  } from 'react-router-dom';
+import { useSelector } from "react-redux";
 
 
 
 library.add(fas,faTwitter,faFontAwesome)
 
 function App() {
-  const user = false
+  const user = useSelector((state) => state.user.currentUser);
   return (
     <div className="App">
         <Router>

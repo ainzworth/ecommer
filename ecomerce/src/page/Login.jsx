@@ -2,7 +2,10 @@ import React from "react";
 import "./login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { useState } from "react";
+import {login} from "../redux/apiCalls.js" ;
+import styled from "styled-components";
 import {
   faFacebook,
   faGoogle,
@@ -10,6 +13,7 @@ import {
   faTwitter,
   faPinterest,
 } from "@fortawesome/free-brands-svg-icons";
+import { useDispatch } from "react-redux";
 
 // database
 const database = [
@@ -22,50 +26,23 @@ const database = [
     password: "123",
   },
 ];
-
-
+const Error = styled.span`
+  color: red;
+`;
 
 const Login = () => {
-  const errors = {
-    unname: "invalid username",
-    pass: "invalid password",
-  };
-  const navigate = useNavigate();
-  const [errorMessage, setErrorMessage] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const handleSubmmit = (event) => {
-    event.preventDefault();
-    var { uname, pass } = document.forms[0];
-    // find user
-    const userData = database.find((user) => user.username === uname.value);
 
-    // check if input user is in the database
-    if ( userData ) {
-      console.log("handle submit");
-      console.log(userData);
-      console.log(pass.value);
-      if (userData.password !== pass.value) {
-        // invalid password
-        setErrorMessage({ name: errors.pass, message: errors.pass });
-        setIsSubmitted(false);
-        console.log(errorMessage);
-      } else {
-          navigate("/");
-        setIsSubmitted(true);
-      }
-    } else {
-      // user name not found
-      setErrorMessage({ name: errors.username, message: errors.username });
-      setIsSubmitted(false);
-      // log message
-      console.log(errorMessage.name);
-    }
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const { isFetching, error } = useSelector((state) => state.user);
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    login(dispatch, { username, password });
   };
 
-  const renderErrorMessage = (name) => {
-    name === errorMessage.name && (<div className="error">{errorMessage.name}</div>);
-  };
+
 
 
   return (
@@ -73,14 +50,14 @@ const Login = () => {
       <div>
         <h1 style={{ fontSize: "40px" }}>Login</h1>
       </div>
-      <form className="login_fields" onSubmit={handleSubmmit}>
+      <form className="login_fields" >
         {/*login fields*/}
 
         {/*username field*/}
         <div className="login_input">
-          <input type="text" name="uname" placeholder="Tên đăng nhập" />
+          <input type="text" name="uname" placeholder="Tên đăng nhập" onChange={(e)=>setUsername(e.target.value)} />
          
-          {renderErrorMessage(errors.unname)}
+   
         </div>
         <div
           style={{
@@ -92,17 +69,18 @@ const Login = () => {
           className="login_input"
         >
           {/*password name*/}
-          <input type="password" name="pass" placeholder="mật khẩu" />
-    
-          {renderErrorMessage(errors.pass)}
+          <input type="password" name="pass" placeholder="mật khẩu" onChange={(e)=>setPassword(e.target.value)} />
+
           <a>Quen mat khau</a>
         </div>
 
-        <input style={{ cursor: "pointer" }} type="submit" value="Đăng nhập" />
+        <input style={{ cursor: "pointer" }} type="submit" value="Đăng nhập"  onClick={handleClick} disabled={isFetching}/>
 
         <div className="login_bottom">
+           {error && <Error>Something went wrong...</Error>}
           <h1> Hoặc </h1>
           <p>Đăng nhập bằng</p>
+       
           <div className="login_bottom_options">
             <a className="box" id="box1">
               <FontAwesomeIcon icon={faFacebook} />
